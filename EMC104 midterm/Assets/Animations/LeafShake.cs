@@ -4,10 +4,11 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class LeafShake : MonoBehaviour {
+public class LeafShake : MonoBehaviour
+{
     public Button shakeButton;  // Reference to the UI button
     public float shakeDuration = 1f;  // Duration of the shake
-    public float strength = 3f;       // Strength of the shake
+    public float strength = 1f;       // Strength of the shake
     public int vibrato = 10;          // How much the object vibrates
     public float randomness = 90f;    // Randomness of the shake
 

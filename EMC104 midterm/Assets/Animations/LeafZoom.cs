@@ -32,7 +32,7 @@ public class LeafZoom : MonoBehaviour
             transform.DOScale(targetScale, duration).SetEase(Ease.OutQuint);
         }
 
-        // Toggle the flag
+        // Toggle the fbool
         isZoomedIn = !isZoomedIn;
     }
 }

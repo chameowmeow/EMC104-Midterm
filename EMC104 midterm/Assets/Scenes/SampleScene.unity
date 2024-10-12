@@ -179,7 +179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bounce
+  m_text: 'Flip
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1052,7 +1054,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 700}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1077,7 +1079,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1122,7 +1124,7 @@ GameObject:
   - component: {fileID: 662660046}
   - component: {fileID: 662660045}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SlideButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +1193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 662660046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 8a190405e2eba4747b1f734578162419, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &662660046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1484,7 @@ GameObject:
   - component: {fileID: 867923354}
   - component: {fileID: 867923353}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: FlipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1539,7 +1553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867923354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: a4cd3ff17eb34ae43b88204b24c88490, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &867923354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,10 +1707,12 @@ GameObject:
   - component: {fileID: 1066164095}
   - component: {fileID: 1066164097}
   - component: {fileID: 1066164096}
-  - component: {fileID: 1066164098}
   - component: {fileID: 1066164099}
   - component: {fileID: 1066164100}
   - component: {fileID: 1066164101}
+  - component: {fileID: 1066164102}
+  - component: {fileID: 1066164104}
+  - component: {fileID: 1066164105}
   m_Layer: 5
   m_Name: Leaf
   m_TagString: Untagged
@@ -1746,18 +1774,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066164094}
   m_CullTransparentMesh: 1
---- !u!114 &1066164098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066164094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c21267565c4f14f8d67d51f637f1a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1066164099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +1823,53 @@ MonoBehaviour:
   strength: 3
   vibrato: 10
   randomness: 90
+--- !u!114 &1066164102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066164094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cd3ff17eb34ae43b88204b24c88490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipButton: {fileID: 867923353}
+  flipDuration: 0.5
+  flipAngle: 180
+--- !u!114 &1066164104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066164094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a190405e2eba4747b1f734578162419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleButton: {fileID: 662660045}
+  slidingPanel: {fileID: 1066164095}
+  slideDistance: 350
+  slideDuration: 0.5
+--- !u!114 &1066164105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066164094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532a1739b9b1d7e4399735376f769c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleButton: {fileID: 1911121199}
+  slidingPanel: {fileID: 1066164095}
+  slideDistance: 10
+  slideDuration: 0.5
 --- !u!1 &1378471568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +2016,7 @@ GameObject:
   - component: {fileID: 1911121200}
   - component: {fileID: 1911121199}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: BounceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2022,7 +2085,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1911121200}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 532a1739b9b1d7e4399735376f769c6e, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1911121200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,7 +2193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fade
+  m_text: Bounce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
